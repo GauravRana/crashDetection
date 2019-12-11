@@ -27,6 +27,10 @@ import androidx.core.app.NotificationCompat
 import com.example.biker112.ui.login.MainActivity
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class CrashDetectionService : Service() , SensorEventListener {
 
@@ -39,6 +43,24 @@ class CrashDetectionService : Service() , SensorEventListener {
     private var totalAcceleration: Double = 0.0
     private var lastUpdate: Long = -1
     private val CHECK_INTERVAL = 100 // [msec]
+
+
+    private val FORCE_THRESHOLD = 10000
+    private val TIME_THRESHOLD = 75
+    private val SHAKE_TIMEOUT = 500
+    private val SHAKE_DURATION = 150
+    private val SHAKE_COUNT = 1
+    private val mSensorMgr:SensorManager ?= null
+    private var mLastX = -1.0f
+    private var mLastY = -1.0f
+    private var mLastZ = -1.0f
+    private var mLastTime:Long = 0
+
+
+    private val mContext:Context ?=null
+    private var mShakeCount = 0
+    private var mLastShake:Long = 0
+    private var mLastForce:Long = 0
 
     // Handler that receives messages from the thread
     private inner class ServiceHandler(looper: Looper) : Handler(looper) {
@@ -163,6 +185,35 @@ class CrashDetectionService : Service() , SensorEventListener {
                     Math.abs(linear_acceleration[2])
                 )
             }
+        }
+
+
+        // https://github.com/anaskhan96/Crash-Alert/blob/master/app/src/main/java/com/example/anask/myapplication/ShakeListener.java
+        if (sensor !== SensorManager.SENSOR_ACCELEROMETER) return
+        val now = System.currentTimeMillis()
+
+        if (now - mLastForce > SHAKE_TIMEOUT) {
+            mShakeCount = 0
+        }
+
+        if (now - mLastTime > TIME_THRESHOLD) {
+            val diff = now - mLastTime
+            val speed =
+                Math.abs(values[SensorManager.DATA_X] + values[SensorManager.DATA_Y] + values[SensorManager.DATA_Z] - mLastX - mLastY - mLastZ) / diff * 10000
+            if (speed > FORCE_THRESHOLD) {
+                if (++mShakeCount >= SHAKE_COUNT && now - mLastShake > SHAKE_DURATION) {
+                    mLastShake = now
+                    mShakeCount = 0
+                    if (mShakeListener != null) {
+                        mShakeListener.onShake()
+                    }
+                }
+                mLastForce = now
+            }
+            mLastTime = now
+            mLastX = values[SensorManager.DATA_X]
+            mLastY = values[SensorManager.DATA_Y]
+            mLastZ = values[SensorManager.DATA_Z]
         }
     }
 
