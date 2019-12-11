@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:id="@+id/grp1" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_start"
+            android:title="@string/start_ride" />
+    </group>
+
+    <group android:id="@+id/grp2" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_veh"
+            android:title="@string/my_veh" />
+    </group>
+
+    <group android:id="@+id/grp3" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_ride_h"
+            android:title="@string/ride_h" />
+    </group>
+
+    <group android:id="@+id/grp4" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_emer"
+            android:title="@string/emer_cont" />
+    </group>
+
+    <group android:id="@+id/grp5" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_prof"
+            android:title="@string/prof" />
+    </group>
+
+    <group android:id="@+id/grp6" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_sup"
+            android:title="@string/supp" />
+    </group>
+
+</menu>

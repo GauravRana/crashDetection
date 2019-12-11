@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">Biker112</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+
+    <string name="text_biker_head">Biker 112</string>
+    <string name="text_biker_sub">Crash Detection App</string>
+    <string name="text_mobile_number">Mobile Number</string>
+    <string name="text_verify">Verification code sent to your number</string>
+    <string name="text_v_button">Verify</string>
+    <string name="profile_name">John Cena</string>
+
+
+    <string name="text_save">Save</string>
+
+    <string name="text_mob">Mobile</string>
+    <string name="text_name">Name</string>
+    <string name="text_rel">Relation</string>
+    <string name="text_email">Email</string>
+    <string name="text_bg">Blood Group</string>
+    <string name="text_av">Add Vehicle</string>
+
+
+    <string name="start_ride">Start Ride</string>
+    <string name="my_veh">My Vehicle</string>
+    <string name="ride_h">Ride History</string>
+    <string name="emer_cont">Emergency Contact</string>
+    <string name="prof">Profile</string>
+    <string name="supp">Support</string>
+
+
+    <string name="text_label">Please select one bike, you are taking ride with</string>
+    <string name="text_v1">GAZELLE - NT12345</string>
+    <string name="text_v2">YAMAHA - NT12345</string>
+    <string name="text_v3">KOGA - NT12345</string>
+
+
+    <string name="veh_t">Vehicle Type</string>
+    <string name="veh_n">Vehicle Name</string>
+    <string name="frame_n">Frame Number</string>
+    <string name="lic_no">License Plate Number</string>
+    <string name="ins_n">Insurance Company Name</string>
+    <string name="ins_no">Insurance Company Number</string>
+    <string name="ud">Upload Document</string>
+
+
+    <string name="dev_fall">Device detected fall, Are you ok?</string>
+    <string name="cas_stop">Casual Stop</string>
+    <string name="in_dan">In Danger</string>
+    <string name="acc">Met with an accident</string>
+    <string name="bike">Bike Issue</string>
+    <string name="hp">Health Problem</string>
+
+
+    <string name="no_vehicle">No Vehicle</string>
+    <string name="no_emerg">No Emergency Contact</string>
+    <string name="no_rideH">No Ride History</string>
+
+    <string name="api_success">success</string>
+    <string name="api_failure">No Records Found</string>
+    <string name="api_failure_500">Cannot process request Please contact front desk for help.</string>
+
+    <string name="error_otp">OTP is invalid</string>
+
+    <string name="veh_type">Vehicle Type</string>
+
+
+</resources>

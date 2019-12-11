@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="6dp">
+
+<com.chauthai.swipereveallayout.SwipeRevealLayout
+    android:id="@+id/swipe_layout_1"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_75sdp"
+    app:dragEdge="right"
+    app:mode="same_level">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvEdit"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"
+                android:gravity="center"
+                android:text="Edit"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvDelete"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_red_dark"
+                android:gravity="center"
+                android:text="Delete"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left|center"
+                android:orientation="horizontal">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="5dp">
+
+                <ImageView
+                    android:id="@+id/ivVehImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_place"/>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvVehName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="YAMAHA"
+                        android:padding="@dimen/_2sdp"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/tvVehDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_2sdp"
+                        android:text="Motorbike"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/tvVehNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NT2334"
+                        android:padding="@dimen/_2sdp"
+                        android:textColor="@android:color/black" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+</com.chauthai.swipereveallayout.SwipeRevealLayout>
+</androidx.cardview.widget.CardView>
